@@ -1,0 +1,11 @@
+.container{
+    margin-top: 80px;
+   
+}
+.bg{
+    background: url(/../assets/image/bg.jpg);
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
