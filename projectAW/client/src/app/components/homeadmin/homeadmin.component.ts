@@ -14,9 +14,12 @@ export class HomeadminComponent implements OnInit {
   }
   logout(){
     alert('Your logout!')
-    this.router.navigate(['/signin']);
+    this.router.navigate(['/home']);
   }
 
+  homeadmin(){
+    this.router.navigate(['/homeadmin']);
+  }
   gobooking(){
     this.router.navigate(['/booking']);
   }

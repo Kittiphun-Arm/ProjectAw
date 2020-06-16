@@ -7,12 +7,16 @@ import { AppComponent } from './app.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { from } from 'rxjs';
+import { LoginmemberComponent } from './components/loginmember/loginmember.component';
+import { MembersComponent } from './components/members/members.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SigninComponent,
     AdminComponent,
+    LoginmemberComponent,
+    MembersComponent,
   ],
   imports: [
     BrowserModule,

@@ -5,7 +5,8 @@ import { AdminComponent } from './components/admin/admin.component';
 import { HomeComponent } from './components/home/home.component';
 import { HomeadminComponent } from './components/homeadmin/homeadmin.component';
 import { BookingComponent } from './components/booking/booking.component';
-
+import { LoginmemberComponent } from './components/loginmember/loginmember.component';
+import { MembersComponent } from './components/members/members.component';
 
 const routes: Routes = [
   {path: 'signin' ,component:SigninComponent},
@@ -13,6 +14,8 @@ const routes: Routes = [
   {path: 'home', component:HomeComponent},
   {path: 'homeadmin', component:HomeadminComponent},
   {path: 'booking', component:BookingComponent},
+  {path: 'loginmember', component:LoginmemberComponent},
+  {path: 'members', component:MembersComponent},
   {path: '',
     redirectTo: 'home',
     pathMatch: 'full'
