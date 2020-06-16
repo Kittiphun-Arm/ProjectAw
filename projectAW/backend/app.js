@@ -2,7 +2,7 @@ const expressFunction = require('express');
 const mongoose = require('mongoose'); 
 var expressApp = expressFunction();
 
-const url = 'mongodb://localhost:27017/university'; 
+const url = 'mongodb+srv://admin:1234@musicroom-btq2m.gcp.mongodb.net/MONGO?retryWrites=true&w=majority'; 
 const config = { 
     autoIndex: true, 
     useNewUrlParser: true, 
