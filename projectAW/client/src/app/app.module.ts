@@ -9,6 +9,11 @@ import { AdminComponent } from './components/admin/admin.component';
 import { from } from 'rxjs';
 import { LoginmemberComponent } from './components/loginmember/loginmember.component';
 import { MembersComponent } from './components/members/members.component';
+import { HomecustomerComponent } from './components/homecustomer/homecustomer.component';
+import { BookingComponent } from './components/booking/booking.component';
+import { BorrowComponent } from './components/borrow/borrow.component';
+import { ShowbookingComponent } from './components/showbooking/showbooking.component';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +22,11 @@ import { MembersComponent } from './components/members/members.component';
     AdminComponent,
     LoginmemberComponent,
     MembersComponent,
+    HomecustomerComponent,
+    BookingComponent,
+    BorrowComponent,
+    ShowbookingComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,

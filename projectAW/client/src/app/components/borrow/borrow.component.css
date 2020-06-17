@@ -1,0 +1,13 @@
+.main{
+    background: url(/../assets/image/borrowbg.jpg) no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    width: 100;
+    height: 100vh;
+}
+.card{
+    margin-top: 50px;
+}
+*{
+    box-sizing: border-box;
+}

@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
 @Component({
-  selector: 'app-homeadmin',
-  templateUrl: './homeadmin.component.html',
-  styleUrls: ['./homeadmin.component.css']
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.css']
 })
-export class HomeadminComponent implements OnInit {
+export class SearchComponent implements OnInit {
 
   constructor(private router:Router) { }
 
@@ -16,7 +15,6 @@ export class HomeadminComponent implements OnInit {
     alert('Your logout!')
     this.router.navigate(['/home']);
   }
-
   homeadmin(){
     this.router.navigate(['/homeadmin']);
   }

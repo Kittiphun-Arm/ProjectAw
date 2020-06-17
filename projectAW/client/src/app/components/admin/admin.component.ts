@@ -31,6 +31,7 @@ export class AdminComponent implements OnInit {
     console.log(this.dataForm.value)
     this.auth.signUp(this.dataForm.value).subscribe(
       data => {
+          console.log(data)
           alert('Create your account successfully')
           this.dataForm.reset()
       },

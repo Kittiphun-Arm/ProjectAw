@@ -7,19 +7,19 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Booking</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link " href="#">Borrow</a>
-            </li>
+                <button class="btn btn-link my-2 my-sm-0"  type="submit"(click)='homecustomer()'>Home</button>
+               </li>
+               <li class="nav-item">
+                <button class="btn btn-link my-2 my-sm-0"  type="submit"(click)='booking()'>Booking</button>
+               </li>
+             
+               <li class="nav-item">
+                <button class="btn btn-link my-2 my-sm-0"  type="submit"(click)='borrow()'>Borrow</button>
+               </li>
 
         </ul>
         <form class="form-inline my-2 my-lg-0">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Log Out</button>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"(click)='logout()'>Log out</button>
         </form>
     </div>
 </nav>
@@ -31,14 +31,13 @@
             </div>
             <div class="row">
                 <div class="card-body">
-                    <form>
+                    <form [formGroup]="dataForm">
                         <div class='card-body'>
                             <div class='row'>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="exampleFormControlInput1">Full Name : </label>
-                                        <input type="text" class="form-control" id="exampleFormControlInput1"
-                                            placeholder="Enter Your Full Name" required>
+                                        <input type="text" class="form-control" placeholder="Enter Your Full Name" formControlName="name" >
                                     </div>
                                 </div>
                             </div>
@@ -46,42 +45,46 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="produceDate">Date : </label>
-                                        <input type="date" class="form-control" formControlName='produceDate'>
+                                        <input type="date" class="form-control" formControlName="date">
                                     </div>
                                 </div>
+                                
                                 <div class="form-group col-md-6">
                                     <label for="inputState">Room Type: </label>
-                                    <select id="inputState" class="form-control">
-                                        <option selected>Choose...</option>
-                                    </select>
+                                    <select class="browser-default custom-select" formControlName="type" class="form-control">
+                                        <option selected>--กรุณาเลือก--</option>
+                                        <option *ngFor="let type of roomType">{{type}}</option>
+                                      </select>
                                 </div>
                             </div>
+
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <label for="inputState">Time : Entry time</label>
-                                    <select id="inputState" class="form-control">
-                                        <option selected>Choose...</option>
-                                    </select>
+                                    <select class="browser-default custom-select" formControlName="typeintime" class="form-control">
+                                        <option selected>--กรุณาเลือก--</option>
+                                        <option *ngFor="let type of timein">{{type}}</option>
+                                      </select>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="inputState">Time : Time out</label>
-                                    <select id="inputState" class="form-control">
-                                        <option selected>Choose...</option>
-                                    </select>
+                                    <select class="browser-default custom-select" formControlName="typeouttime" class="form-control">
+                                        <option selected>--กรุณาเลือก--</option>
+                                        <option *ngFor="let type of timeout">{{type}}</option>
+                                      </select>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="exampleFormControlInput1">Number of people : </label>
-                                        <input type="text" class="form-control" id="exampleFormControlInput1"
-                                            placeholder="Number of people" required>
+                                        <input type="text" class="form-control"placeholder="Number of people" formControlName="numberpeople">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12" style="margin-left: 220px">
-                                    <button type="button" class="btn btn-success">Success</button>
+                                    <button type="submit" class="btn btn-success" (click)="addData()">Success</button>
                                 </div>
                             </div>
                         </div>

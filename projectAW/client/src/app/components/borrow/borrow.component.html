@@ -1,0 +1,89 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">MusicRoom</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <button class="btn btn-link my-2 my-sm-0"  type="submit"(click)='homecustomer()'>Home</button>
+               </li>
+               <li class="nav-item">
+                <button class="btn btn-link my-2 my-sm-0"  type="submit"(click)='booking()'>Booking</button>
+               </li>
+             
+               <li class="nav-item">
+                <button class="btn btn-link my-2 my-sm-0"  type="submit"(click)='borrow()'>Borrow</button>
+               </li>
+
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"(click)='logout()'>Log out</button>
+        </form>
+    </div>
+</nav>
+<section class="main">
+    <div class="container text-dark py-5" style="width: 600px ">
+        <div class="card">
+            <div class="card-header text-center">
+                <h3>Borrow Musical Instrument</h3>
+            </div>
+            <div class="row">
+                <div class="card-body">
+                    <form [formGroup]="dataForm">
+                        <div class='card-body'>
+                            <div class='row'>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Full Name : </label>
+                                        <input type="text" class="form-control" placeholder="Enter Your Full Name" formControlName="name">
+                                            
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='row'>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="produceDate">Date : </label>
+                                        <input type="date" class="form-control" formControlName='produceDate' formControlName="date">
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputState">Musical Instrument : </label>
+                                    <select class="browser-default custom-select" formControlName="music" class="form-control">
+                                        <option selected="">--กรุณาเลือก--</option>
+                                          <option *ngFor="let item of musicalInstrument">{{item}}</option>
+                                    </select>
+                                </div>
+
+
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputState">Time : Entry time</label>
+                                    <select id="browser-default custom-select" formControlName="timein" class="form-control">
+                                        <option selected>--กรุณาเลือก--</option>
+                                        <option *ngFor="let item of timeIn">{{item}}</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputState">Time : Time out</label>
+                                    <select id="browser-default custom-select" formControlName="timeout" class="form-control">
+                                        <option selected>--กรุณาเลือก--</option>
+                                        <option *ngFor="let item of timeOut">{{item}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12" style="margin-left: 220px">
+                                    <button type="button" class="btn btn-success"(click)='addData()'>Success</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

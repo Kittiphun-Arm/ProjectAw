@@ -30,7 +30,8 @@ expressApp.use('/signinmembers', require('./routes/signinmembers'))
 expressApp.use('/members', require('./routes/members')) 
 expressApp.use('/user', require('./routes/user')) 
 expressApp.use('/login', require('./routes/signin'))
-
+expressApp.use('/booking', require('./routes/booking'))
+expressApp.use('/borrow', require('./routes/borrow'))
 expressApp.listen(3000, function(){
     console.log('Listening on port 3000');
 });

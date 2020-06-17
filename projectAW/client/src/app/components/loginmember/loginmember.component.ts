@@ -24,7 +24,7 @@ export class LoginmemberComponent implements OnInit {
       data => {
         if(data.status == true){
           alert('login success!');
-          this.router.navigate(['/homeadmin']);
+          this.router.navigate(['/homecustomer']);
         }else{
           alert('Username or Password is incorrect!');
         }
