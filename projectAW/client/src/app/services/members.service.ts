@@ -7,7 +7,7 @@ import { LocalStorageService } from 'angular-web-storage';
   providedIn: 'root'
 })
 export class MembersService {
-
+  members: any;
   constructor(private http: HttpClient,public local: LocalStorageService) { }
   addMembers(membersData){
     return this.http.post<any>('http://localhost:3000/members/members', membersData)
@@ -24,5 +24,15 @@ export class MembersService {
         }
         return data;
       }))
+    }
+    getMembers(){
+      return this.http.get<any>('http://localhost:3000/members/members')
+        .pipe(map(data => { 
+          if (data) {
+            this.members = data; 
+            console.log(this.members);
+          }
+        return this.members;	
+      }));
     }
 }

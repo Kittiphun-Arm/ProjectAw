@@ -78,4 +78,11 @@ router.route('/borrow')
                 console.log(err);
             })
     })
+router.route('/delete/:id')
+    .delete(async (req, res) => {
+    const { id } = req.params
+
+    await Borrow.findByIdAndDelete(id)
+    res.status(204).end()
+})
 module.exports = router

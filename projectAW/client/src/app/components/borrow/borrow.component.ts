@@ -23,6 +23,11 @@ export class BorrowComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  get name(){
+    return this.dataForm.get('name');
+  }
+  
   addData(){
     console.log(this.dataForm.value)
     this.bor.addBorrow(this.dataForm.value).subscribe(
@@ -50,5 +55,8 @@ export class BorrowComponent implements OnInit {
   }
   booking(){
     this.router.navigate(['/booking']);
+  }
+  showbooking(){
+    this.router.navigate(['/showbookinguser']);
   }
 }

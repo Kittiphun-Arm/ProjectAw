@@ -14,6 +14,9 @@ import { BookingComponent } from './components/booking/booking.component';
 import { BorrowComponent } from './components/borrow/borrow.component';
 import { ShowbookingComponent } from './components/showbooking/showbooking.component';
 import { SearchComponent } from './components/search/search.component';
+import { ShowbookinguserComponent } from './components/showbookinguser/showbookinguser.component';
+import { RuleComponent } from './components/rule/rule.component';
+import { ShowborrowComponent } from './components/showborrow/showborrow.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,9 @@ import { SearchComponent } from './components/search/search.component';
     BorrowComponent,
     ShowbookingComponent,
     SearchComponent,
+    ShowbookinguserComponent,
+    RuleComponent,
+    ShowborrowComponent,
   ],
   imports: [
     BrowserModule,

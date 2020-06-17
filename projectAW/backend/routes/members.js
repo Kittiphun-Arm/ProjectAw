@@ -12,6 +12,7 @@ var Schema = require("mongoose").Schema;
     password: String,
     gender: String,
     file: String,
+    img: String,
     telephone: String,
     address: String,
     zip: String
@@ -41,6 +42,7 @@ const insertMembers = (dataMembers) => {
             password: dataMembers.password,
             gender: dataMembers.gender,
             file: dataMembers.file,
+            img: dataMembers.img,
             telephone: dataMembers.telephone,
             address: dataMembers.address,
             zip: dataMembers.zip
@@ -66,6 +68,7 @@ router.route('/members')
                 password: hashText,
                 gender:req.body.gender,
                 file:req.body.file,
+                img:req.body.img,
                 telephone:req.body.telephone,
                 address:req.body.address,
                 zip:req.body.zip
@@ -83,4 +86,33 @@ router.route('/members')
         .catch(err => {
         })
     });
+
+
+    const getMembers = () => {
+        return new Promise((resolve, reject) => {
+            Members.find({}, (err, data) => {
+                if (err) {
+                    reject(new Error('Cannont get Members'));
+                } else {
+                    if (data) {
+                        resolve(data)
+                    } else {
+                        reject(new Error('Cannont get Members'));
+                    }
+                }
+            })
+        });
+    }
+    router.route('/members')
+        .get((req, res) => {
+            console.log('get');
+            getMembers()
+                .then(result => {
+                    console.log(result);
+                    res.status(200).json(result);
+                })
+                .catch(err => {
+                    console.log(err);
+                })
+        });
 module.exports = router

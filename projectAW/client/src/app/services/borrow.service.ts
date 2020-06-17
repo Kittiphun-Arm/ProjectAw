@@ -6,7 +6,7 @@ import { LocalStorageService } from 'angular-web-storage';
   providedIn: 'root'
 })
 export class BorrowService {
-
+  borrow: any;
   constructor(private http: HttpClient,public local: LocalStorageService) { }
   addBorrow(borrowData){
     return this.http.post<any>('http://localhost:3000/borrow/borrow', borrowData)
@@ -15,4 +15,17 @@ export class BorrowService {
       }));
     }
 
+    getBorrow(){
+      return this.http.get<any>('http://localhost:3000/borrow/borrow')
+        .pipe(map(data => { 
+          if (data) {
+            this.borrow = data; 
+            console.log(this.borrow);
+          }
+        return this.borrow;	
+      }));
+    }
+    delete(databorrow){
+      return this.http.delete<any>('http://localhost:3000/borrow/delete/'+databorrow) 
+    }
 }

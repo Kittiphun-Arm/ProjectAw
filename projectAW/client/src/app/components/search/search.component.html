@@ -13,6 +13,9 @@
                 <button class="btn btn-link my-2 my-sm-0"  type="submit"(click)='showbooking()'>Booking information</button>
             </li>
             <li class="nav-item">
+                <button class="btn btn-link my-2 my-sm-0"  type="submit"(click)='showborrow()'>Borrow information</button>
+            </li>
+            <li class="nav-item">
                 <button class="btn btn-link my-2 my-sm-0"  type="submit"(click)='search()'>Search</button>
             </li>
         </ul>
@@ -39,17 +42,15 @@
                         <th>Last Name</th>
                         <th>Email</th>
                         <th>Address</th>
-                        <th>Image</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td scope="row"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                <tbody class="text-white">
+                    <tr *ngFor="let item of members; index as i">
+                        <td scope="row">{{item.username}}</td>
+                        <td>{{item.firstname}}</td>
+                        <td>{{item.lastname}}</td>
+                        <td>{{item.email}}</td>
+                        <td>{{item.address}}</td>
                     </tr>
                 </tbody>
             </table>

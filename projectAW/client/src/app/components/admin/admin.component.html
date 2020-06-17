@@ -1,96 +1,161 @@
-<div class="bg">
-<div class="container" >
-    <div class="card">
-        <div class="card-header">
-            <h3>Employee Signup</h3>
-        </div>
-        <div class="card-body">
-            <form [formGroup]="dataForm">
-                <div class='card-body'>
-                    <div class='row'>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">First Name</label>
-                                <input type="text" class="form-control"placeholder="First Name" formControlName='firstname'>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Last Name</label>
-                                <input type="text" class="form-control" placeholder="Last Name" formControlName='lastname'>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Username</label>
-                                <input type="text" class="form-control" placeholder="Username" formControlName='username'>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Email</label>
-                                <input type="email" class="form-control"  placeholder="name@example.com" formControlName='email'>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Password</label>
-                                <input type="password" class="form-control"  placeholder="Password"  formControlName='password'>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Phone</label>
-                                <input type="text" class="form-control"  placeholder="08XXXXXXXX" formControlName='telephone'>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-2">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Gender</label>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="gender" value="male" formControlName='gender'>Male
+<section class="main">
+    <div class="container text-dark py-5" style="width: 800px ">
+        <div class="card">
+            <div class="card-header text-center">
+                <h3>Employee Signup</h3>
+            </div>
+            <div class="row">
+                <div class="card-body">
+                    <form [formGroup]="dataForm">
+                        <div class='card-body'>
+                            <div class='row'>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">First Name</label>
+                                        <input type="text" class="form-control"placeholder="First Name" formControlName='firstname'>
+                                        <div *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)" class="alert alert-danger">
+                                            <div *ngIf="firstname.errors.required">
+                                                firstname is required.
+                                            </div>
+                                            <div *ngIf="firstname.errors?.pattern">
+                                                   Your firstname is incorrect!!
+                                             </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="gender" value="female" formControlName='gender'>Female
+        
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Last Name</label>
+                                        <input type="text" class="form-control" placeholder="Last Name" formControlName='lastname'>
+                                        <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)" class="alert alert-danger">
+                                            <div *ngIf="lastname.errors.required">
+                                                lastname is required.
+                                            </div>
+                                            <div *ngIf="lastname.errors?.pattern">
+                                                   Your lastname is incorrect!!
+                                             </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Username</label>
+                                        <input type="text" class="form-control" placeholder="Username" formControlName='username'>
+                                        <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
+                                            <div *ngIf="username.errors.required">
+                                                username is required.
+                                            </div>
+                                            <div *ngIf="username.errors?.pattern">
+                                                   Your username is incorrect!!
+                                             </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-5">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Address</label>
-                                <textarea class="form-control "  placeholder="Your Address" formControlName='address'></textarea>
-                                    
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Email</label>
+                                        <input type="email" class="form-control"  placeholder="name@example.com" formControlName='email'>
+                                        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+                                            <div *ngIf="email.errors.required">
+                                               Email is required
+                                            </div>
+                                            <div *ngIf="email.errors.email">
+                                               Your email is incorrect!!
+                                            </div>
+                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Password</label>
+                                        <input type="password" class="form-control"  placeholder="Password"  formControlName='password'>
+                                        <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+                                            <div *ngIf="password.errors.required">
+                                                    Password is required.
+                                            </div>
+                                            <div *ngIf="password.errors?.pattern">
+                                                   Your password is incorrect!!
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Phone</label>
+                                        <input type="text" class="form-control"  placeholder="08XXXXXXXX" formControlName='telephone'>
+                                        <div *ngIf="telephone.invalid && (telephone.dirty || telephone.touched)" class="alert alert-danger">
+                                            <div *ngIf="telephone.errors.required">
+                                                    Phone is required.
+                                            </div>
+                                            <div *ngIf="telephone.errors?.pattern">
+                                                   Your Phone is incorrect!!
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Gender</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="gender" value="male" formControlName='gender'>Male
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="gender" value="female" formControlName='gender'>Female
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Address</label>
+                                        <textarea class="form-control "  placeholder="Your Address" formControlName='address'></textarea>
+                                        <div *ngIf="address.invalid && (address.dirty || address.touched)" class="alert alert-danger">
+                                            <div *ngIf="address.errors.required">
+                                                Address is required.
+                                            </div>
+                                            <div *ngIf="address.errors?.pattern">
+                                                   Your address is incorrect!!
+                                             </div>
+                                        </div>   
+                                    </div>
+                                </div>
+        
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Zip</label>
+                                        <input type="text" class="form-control"  placeholder="Zip" formControlName='zip'>
+                                        <div *ngIf="zip.invalid && (zip.dirty || zip.touched)" class="alert alert-danger">
+                                            <div *ngIf="zip.errors.required">
+                                                    Zip is required.
+                                            </div>
+                                            <div *ngIf="zip.errors?.pattern">
+                                                   Your Zip is incorrect!!
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                        <button type="submit" class="btn btn-success" (click)='signup()'>Signup</button>
+                                        &nbsp;
+                                        <button type="submit" class="btn btn-success"(click)='back()' >back</button>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="col-md-5">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Zip</label>
-                                <input type="text" class="form-control"  placeholder="Zip" formControlName='zip'>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                                <button type="submit" class="btn btn-success" (click)='signup()'>Signup</button>
-                                &nbsp;
-                                <button type="submit" class="btn btn-success"(click)='back()' >back</button>
-                        </div>
-                    </div>
-                </div>
-            </form>
+                    </form>
            
+                </div>
+            </div>
         </div>
     </div>
-</div>
-</div>
+</section>

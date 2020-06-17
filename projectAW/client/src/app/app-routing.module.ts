@@ -11,6 +11,9 @@ import { BookingComponent } from './components/booking/booking.component';
 import { BorrowComponent } from './components/borrow/borrow.component';
 import { ShowbookingComponent } from './components/showbooking/showbooking.component';
 import { SearchComponent } from './components/search/search.component';
+import { ShowbookinguserComponent } from './components/showbookinguser/showbookinguser.component';
+import { ShowborrowComponent } from './components/showborrow/showborrow.component';
+
 const routes: Routes = [
   {path: 'signin' ,component:SigninComponent},
   {path: 'admin' ,component:AdminComponent},
@@ -23,6 +26,8 @@ const routes: Routes = [
   {path: 'borrow', component:BorrowComponent},
   {path: 'showbooking', component:ShowbookingComponent},
   {path: 'search', component:SearchComponent},
+  {path: 'showbookinguser', component:ShowbookinguserComponent},
+  {path: 'showborrow', component:ShowborrowComponent},
   {path: '',
     redirectTo: 'home',
     pathMatch: 'full'

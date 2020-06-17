@@ -16,14 +16,15 @@ export class HomeadminComponent implements OnInit {
     alert('Your logout!')
     this.router.navigate(['/home']);
   }
-
   homeadmin(){
     this.router.navigate(['/homeadmin']);
   }
   showbooking(){
     this.router.navigate(['/showbooking']);
   }
-
+  showborrow(){
+    this.router.navigate(['/showborrow']);
+  }
   search(){
     this.router.navigate(['/search']);
   }

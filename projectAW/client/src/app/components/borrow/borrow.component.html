@@ -16,6 +16,9 @@
                <li class="nav-item">
                 <button class="btn btn-link my-2 my-sm-0"  type="submit"(click)='borrow()'>Borrow</button>
                </li>
+               <li class="nav-item">
+                <button class="btn btn-link my-2 my-sm-0"  type="submit"(click)='showbooking()'>Showbooking</button>
+               </li>
 
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -25,6 +28,7 @@
 </nav>
 <section class="main">
     <div class="container text-dark py-5" style="width: 600px ">
+        <app-rule></app-rule>
         <div class="card">
             <div class="card-header text-center">
                 <h3>Borrow Musical Instrument</h3>
@@ -38,7 +42,14 @@
                                     <div class="form-group">
                                         <label for="exampleFormControlInput1">Full Name : </label>
                                         <input type="text" class="form-control" placeholder="Enter Your Full Name" formControlName="name">
-                                            
+                                        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+                                            <div *ngIf="name.errors.required">
+                                                name is required.
+                                            </div>
+                                            <div *ngIf="name.errors?.pattern">
+                                                   Your name is incorrect!!
+                                             </div>
+                                        </div>  
                                     </div>
                                 </div>
                             </div>

@@ -42,6 +42,9 @@ export class ShowbookingComponent implements OnInit {
   showbooking(){
     this.router.navigate(['/showbooking']);
   }
+  showborrow(){
+    this.router.navigate(['/showborrow']);
+  }
 
   search(){
     this.router.navigate(['/search']);

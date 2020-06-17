@@ -26,4 +26,7 @@ export class HomecustomerComponent implements OnInit {
   booking(){
     this.router.navigate(['/booking']);
   }
+  showbooking(){
+    this.router.navigate(['/showbookinguser']);
+  }
 }
